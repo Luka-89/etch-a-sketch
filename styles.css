@@ -1,0 +1,72 @@
+:root {
+    --jet-lighter: #585757;
+    --jet-light: #4b4a4a;
+    --jet: #363636;
+    --jet-dark: #252525;
+}
+
+html {
+    box-sizing: content-box;
+}
+
+body {
+    background-color: var(--jet);
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 48px;
+    color: var(--silver)
+}
+
+.size-para {
+    text-align: center;
+    color: black;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+span {
+    font-size: 28px;
+}
+
+#size, #size-btn  {
+    box-shadow: none;
+    border: 0;
+    border-radius: 12px;
+    height: 28px;
+    width: 70px;
+    background-color: var(--jet);
+    font-size: 24px;
+    text-align: center;
+    transition: background-color ease 0.3s;
+}
+
+#size-btn {
+    width: 100px;
+    height: 36px;
+}
+
+#size:hover, #size:focus, #size-btn:hover {
+    background-color: var(--jet-light);
+    border: none;
+    outline: none;
+}
+
+#size-btn:active {
+    transition: none;
+    background-color: var(--jet-lighter);
+}
+
+.sketch-zone {
+    width: 700px;
+    height: 700px;
+    border: 2px solid black;
+}
