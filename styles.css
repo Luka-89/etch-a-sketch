@@ -69,10 +69,12 @@ span {
     width: 700px;
     height: 700px;
     border: 2px solid black;
+    flex-wrap: flex-end;
 }
 
 .tile {
-    width: 10px;
-    height: 10px;
+    width: 100px;
+    height: 100px;
     background-color: var(--jet);
+    flex: 0;
 }
