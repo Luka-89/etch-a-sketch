@@ -8,12 +8,14 @@ let mouseDown = false;
 document.addEventListener("mousedown", () => mouseDown = true);
 document.addEventListener("mouseup", () => mouseDown = false);
 
+document.body.addEventListener("keydown", renderKeydown);
+
 render();
 
 function changeColor(e) {
     if (!mouseDown) return;
     e.target.style.backgroundColor = "var(--jet-light)";
-    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.25; 
+    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.25;
 }
 
 function changeColorRandom(e) {
@@ -22,7 +24,7 @@ function changeColorRandom(e) {
                                             ${Math.floor(Math.random() * 255)}, 
                                             ${Math.floor(Math.random() * 255)}
                                         )`;
-    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.1; 
+    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.1;
 }
 
 function render() {
@@ -42,8 +44,12 @@ function render() {
             tile.style.height = tileSize + "px";
             tile.style.width = tileSize + "px";
             gridRow.appendChild(tile);
-            tile.addEventListener("mouseover", changeColorRandom);
+            tile.addEventListener("mouseover", changeColor);
         }
         sketchZone.appendChild(gridRow);
     }
+}
+
+function renderKeydown(e) {
+    if(e.key === "Enter") render();
 }
