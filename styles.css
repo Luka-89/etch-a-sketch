@@ -77,4 +77,5 @@ span {
     height: 100px;
     background-color: var(--jet);
     flex: 0;
+    opacity: 0;
 }

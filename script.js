@@ -13,6 +13,16 @@ render();
 function changeColor(e) {
     if (!mouseDown) return;
     e.target.style.backgroundColor = "var(--jet-light)";
+    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.25; 
+}
+
+function changeColorRandom(e) {
+    if (!mouseDown) return;
+    e.target.style.backgroundColor = `rgb(  ${Math.floor(Math.random() * 255)}, 
+                                            ${Math.floor(Math.random() * 255)}, 
+                                            ${Math.floor(Math.random() * 255)}
+                                        )`;
+    e.target.style.opacity = parseFloat(getComputedStyle(e.target).opacity) + 0.1; 
 }
 
 function render() {
@@ -32,7 +42,7 @@ function render() {
             tile.style.height = tileSize + "px";
             tile.style.width = tileSize + "px";
             gridRow.appendChild(tile);
-            tile.addEventListener("mouseover", changeColor);
+            tile.addEventListener("mouseover", changeColorRandom);
         }
         sketchZone.appendChild(gridRow);
     }
